@@ -1,0 +1,48 @@
+```python
+import pygame
+import random
+
+# Initialize pygame
+pygame.init()
+
+# Set up the game window
+screen_width = 800
+screen_height = 600
+win = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption("Car Racing Game")
+
+# Colors
+white (255, 255, 255)
+black = (0, 0, 0)
+
+# Car properties
+car_width = 73
+car_height = 82
+
+# Load images and scale them to fit the car properties 
+car_img = pygame.image.load('car.png')
+car_img_scaled = pygame.transform.scale(car_img, (car_width, car_height))
+
+# Create obstacles (rectangles) with random positions and sizes
+obstacles_list=[]
+for i in range(3):
+    obstacle_x= random.randrange(50,(screen_width-50))
+    obstacle_y= -(random.randrange(1000))
+    obstacle_w=60 
+    obstacle_h=60  
+    obstacles_list.append([obstacle_x ,obstacle_y ,obstacle_w ,obstacle_h])
+
+def display_car(x,y):
+   win.blit(car_img_scaled,(x,y))
+
+def display_obstacles(obstacles_list):
+   for obstacle in obstacles_list:
+       rect=pygame.draw.rect(win,(white),object)
+       
+def game_loop():
+   x=(screen_width*0.45)
+   y=(screen_height*0.8)
+
+   x_change=0
+   
+   car_speed=5
